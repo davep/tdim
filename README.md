@@ -4,16 +4,21 @@ A simple tool to help when I want to size any terminal "just so".
 
 ## Installation
 
-`tdim` can be installed with either `pip`
+### pipx
 
-```sh
-$ pip install tdim
-```
-
-or ideally `pipx`:
+The package can be installed using [`pipx`](https://pypa.github.io/pipx/):
 
 ```sh
 $ pipx install tdim
+```
+
+### Homebrew
+
+The package is available via Homebrew. Use the following commands to install:
+
+```sh
+$ brew tap davep/homebrew
+$ brew install tdim
 ```
 
 ## Usage
