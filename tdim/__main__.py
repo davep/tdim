@@ -26,7 +26,6 @@ class Dimensions(App[None]):
             border: thick white;
         }
     }
-
     """
     """The stylesheet for the application."""
 
