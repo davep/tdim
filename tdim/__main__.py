@@ -21,11 +21,12 @@ class Dimensions(App[None]):
         align: center middle;
         width: 1fr;
         height: 1fr;
+
+        &.bordered {
+            border: thick white;
+        }
     }
 
-    Container.bordered {
-        border: thick white;
-    }
     """
     """The stylesheet for the application."""
 
