@@ -6,9 +6,11 @@ python := $(run) python
 lint   := $(run) pylint
 mypy   := $(run) mypy
 twine  := $(run) twine
+build  := $(python) -m build
+black  := $(run) black
 
 ##############################################################################
-# Run the plotter.
+# Run the app.
 .PHONY: run
 run:
 	$(python) -m $(lib)
@@ -26,6 +28,7 @@ console:
 .PHONY: setup
 setup:				# Install all dependencies
 	pipenv sync --dev
+	$(run) pre-commit install
 
 .PHONY: resetup
 resetup:			# Recreate the virtual environment from scratch
@@ -65,14 +68,14 @@ checkall: lint stricttypecheck # Check all the things
 # Package/publish.
 .PHONY: package
 package:			# Package the library
-	$(python) setup.py bdist_wheel
+	$(build) -w
 
 .PHONY: spackage
 spackage:			# Create a source package for the library
-	$(python) setup.py sdist
+	$(build) -s
 
 .PHONY: packagecheck
-packagecheck: package		# Check the packaging.
+packagecheck: package spackage		# Check the packaging.
 	$(twine) check dist/*
 
 .PHONY: testdist
@@ -85,6 +88,10 @@ dist: packagecheck		# Upload to pypi
 
 ##############################################################################
 # Utility.
+.PHONY: ugly
+ugly:				# Reformat the code with black.
+	$(black) $(lib)
+
 .PHONY: repl
 repl:				# Start a Python REPL
 	$(python)
