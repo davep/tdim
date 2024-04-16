@@ -37,6 +37,7 @@ class Dimensions(App[None]):
         Binding("2", "ratio( 4, 3 )", "4x3"),
         Binding("3", "ratio( 2, 1 )", "2x1"),
         Binding("4", "ratio( 1, 1 )", "1x1"),
+        Binding("5", "ratio( 9, 16 )", "9x16"),
     ]
     """Bindings for the application."""
 
