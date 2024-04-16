@@ -43,6 +43,7 @@ The keys are:
 | <kbd>2</kbd> | 4 x 3              |
 | <kbd>3</kbd> | 2 x 1              |
 | <kbd>4</kbd> | 1 x 1              |
+| <kbd>5</kbd> | 9 x 16             |
 
 To exit the application press <kbd>Esc</kbd>.
 
